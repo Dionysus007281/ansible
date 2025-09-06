@@ -1,0 +1,12 @@
+- hosts: "{{ hosts }}"
+  become: yes
+  tasks:
+  # Set all sudoers to no password
+  # --
+  - name: change sudoers file
+    lineinfile:
+      path: /etc/sudoers
+      state: present
+      regexp: '^%sudo'
+      line: '%sudo ALL=(ALL) NOPASSWD: ALL'
+      validate: /usr/sbin/visudo -cf %s
