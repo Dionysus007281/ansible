@@ -1,4 +1,4 @@
-- hosts: "{{ hosts }}"
+- hosts: all
   become: yes
   tasks:
   # Set all sudoers to no password
