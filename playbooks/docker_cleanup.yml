@@ -1,8 +1,8 @@
 - hosts: all
   tasks:
-    - name: Prune containers older than 24h
-      community.docker.docker_prune:
-      containers: true
-      containers_filters:
-      # only consider containers created more than 24 hours ago
-        until: 24h
+  - name: Prune containers older than 24h
+    community.docker.docker_prune:
+    containers: true
+    containers_filters:
+    # only consider containers created more than 24 hours ago
+      until: 24h
