@@ -1,11 +1,13 @@
 - hosts: all
+
   tasks:
-    - name: Prune everything (including non-dangling images)
+
+    - name: Prune non-dangling, and dangling images
       community.docker.docker_prune:
-      containers: true
-      images: true
-      images_filters:
-        dangling: false
-      networks: true
-      volumes: true
-      builder_cache: true
+        containers: false
+        images: true
+        images_filters:
+          dangling: false
+        networks: false
+        volumes: false
+        builder_cache: false
