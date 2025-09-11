@@ -7,8 +7,13 @@
         upgrade: yes
         update_cache: yes
 
-    - name: check if system reboot is required
-      become: true
-      stat:
-        path: /var/run/reboot-required
-      register: reboot_required
+    - name: E-mail
+      community.general.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: pa.lankhorst@gmail.com
+        password: onlsxdjchpgddjlq
+        to: pa.lankhorst@proton.me
+        subject: Ansible-report
+        body: System (( ansible_hosyname }} has been succesfully upgraded.
+      delegate_to: localhost
