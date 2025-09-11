@@ -16,11 +16,14 @@
 
     # Send e-mail when reboot is required
     - name: Send e-mail
+      vars:
+        vault_password: !vault |
+              $ANSIBLE_VAULT;1.1;AES256;Uhrp398.1680
       community.general.mail:
         host: smtp.gmail.com
         port: 587
         username: pa.lankhorst@gmail.com
-        password: onlsxdjchpgddjlq
+        password: "{{ gmail_password | password_hash('sha512') }}"
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
