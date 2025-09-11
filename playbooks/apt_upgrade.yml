@@ -7,7 +7,15 @@
         upgrade: yes
         update_cache: yes
 
-    - name: E-mail
+    # Check if reboot is required
+    - name: check if system reboot is required
+      become: true
+      stat:
+        path: /var/run/reboot-required
+      register: reboot_required
+
+    # Send e-mail when reboot is required
+    - name: Send e-mail
       community.general.mail:
         host: smtp.gmail.com
         port: 587
@@ -15,4 +23,5 @@
         password: onlsxdjchpgddjlq
         to: pa.lankhorst@proton.me
         subject: Ansible-report
-        body: System {{inventory_hostname}} has been succesfully upgraded.
+        body: System {{inventory_hostname}} needs a reboot!
+      when: reboot_required.stat.exists
