@@ -16,4 +16,3 @@
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System (( ansible_hosyname }} has been succesfully upgraded.
-      delegate_to: localhost
