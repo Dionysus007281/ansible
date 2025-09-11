@@ -27,4 +27,4 @@
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
-      when: reboot_required.stat.exists
+      # when: reboot_required.stat.exists
