@@ -15,4 +15,4 @@
         password: onlsxdjchpgddjlq
         to: pa.lankhorst@proton.me
         subject: Ansible-report
-        body: System (( ansible_hostname }} has been succesfully upgraded.
+        body: System (( inventory_hostname }} has been succesfully upgraded.
