@@ -1,1 +1,13 @@
-
+---
+- hosts: Portsible
+  become: true
+  tasks:
+    - name: Sending an e-mail using Gmail SMTP servers
+      community.general.mail:
+        host: smtp.gmail.com
+        port: 587
+        username: pa.lankhorst@gmail.com
+        password: onlsxdjchpgddjlq
+        to: pa.lankhorst@proton.me
+        subject: Ansible-report
+        body: System {{ ansible_hostname }} has been successfully provisioned.
