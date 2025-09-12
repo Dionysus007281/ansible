@@ -1,5 +1,5 @@
 ---
-- hosts: PortSible
+- hosts: Portsible
   become: true
   tasks:
     - name: upgrade all apt packages
