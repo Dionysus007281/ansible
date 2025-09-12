@@ -20,7 +20,7 @@
         host: smtp.gmail.com
         port: 587
         username: pa.lankhorst@gmail.com
-        password: onlsxdjchpgddjlq
+        password: "{{gmail_password}}"
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
