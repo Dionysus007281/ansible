@@ -15,12 +15,12 @@
       register: reboot_required
 
     # Send e-mail when reboot is required
-    - name: Send e-mail
+    - name: Send e-mail when reboot is required
       community.general.mail:
-        host: smtp.gmail.com
+        host: smtp.protonmail.ch
         port: 587
-        username: pa.lankhorst@gmail.com
-        password: "{{gmail_password}}"
+        username: patrick@lankhorst.org
+        password: "{{proton_password}}"
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
