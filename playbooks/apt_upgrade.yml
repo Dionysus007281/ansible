@@ -25,3 +25,4 @@
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
       when: reboot_required.stat.exists
+      delegate_to: localhost
