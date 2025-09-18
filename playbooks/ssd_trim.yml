@@ -1,12 +1,12 @@
 ---
 - name: TRIM SSD disks on a virtual machine
   hosts: alle
-    tasks:
-      - name: Run fstrim on all mounted filesystems
-        ansible.builtin.command: fstrim -av
-        register: fstrim_result
-        changed_when: "'trim' in fstrim_result.stdout"
+  tasks:
+    - name: Run fstrim on all mounted filesystems
+      ansible.builtin.command: fstrim -av
+      register: fstrim_result
+      changed_when: "'trim' in fstrim_result.stdout"
 
-      - name: Display fstrim result (optional)
-        ansible.builtin.debug:
-          var: fstrim_result.stdout
+    - name: Display fstrim result (optional)
+      ansible.builtin.debug:
+        var: fstrim_result.stdout
