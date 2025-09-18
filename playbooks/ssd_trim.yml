@@ -1,6 +1,6 @@
 ---
 - name: TRIM SSD disks on a virtual machine
-  hosts: alle
+  hosts: all
   tasks:
     - name: Run fstrim on all mounted filesystems
       ansible.builtin.command: fstrim -av
