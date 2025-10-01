@@ -20,7 +20,7 @@
         host: smtp.protonmail.ch
         port: 587
         username: patrick@lankhorst.org
-        password: "{{proton_password}}"
+        password: 8KLQQ9Z3YRPD99C4
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
