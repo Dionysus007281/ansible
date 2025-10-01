@@ -16,6 +16,7 @@
 
     # Send e-mail when reboot is required
     - name: Send e-mail when reboot is required
+      become: true
       community.general.mail:
         host: smtp.gmail.com
         port: 587
@@ -26,5 +27,4 @@
         body: System {{inventory_hostname}} needs a reboot!
         secure: starttls
       when: reboot_required.stat.exists
-      become: true
       delegate_to: localhost
