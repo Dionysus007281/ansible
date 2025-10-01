@@ -26,4 +26,4 @@
         body: System {{inventory_hostname}} needs a reboot!
         secure: starttls
       when: reboot_required.stat.exists
-    # delegate_to: localhost
+      delegate_to: localhost
