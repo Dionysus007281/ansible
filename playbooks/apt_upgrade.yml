@@ -16,6 +16,7 @@
 
     # Send e-mail when reboot is required
     - name: Send e-mail when reboot is required
+      become: no
       community.general.mail:
         host: smtp.gmail.com
         port: 587
