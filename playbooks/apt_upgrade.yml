@@ -19,7 +19,7 @@
       community.general.mail:
         host: smtp.protonmail.ch
         port: 587
-        username: patrick@lankhorst.org
+        username: pa.lankhorst@proton.me
         password: "{{proton_password}}"
         to: pa.lankhorst@proton.me
         subject: Ansible-report
