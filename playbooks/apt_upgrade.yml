@@ -24,5 +24,6 @@
         to: pa.lankhorst@proton.me
         subject: Ansible-report
         body: System {{inventory_hostname}} needs a reboot!
+        secure: starttls
       when: reboot_required.stat.exists
     # delegate_to: localhost
