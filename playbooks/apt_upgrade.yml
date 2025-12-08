@@ -14,11 +14,18 @@
         body: "{{ inventory_hostname }} task completed"
 
     # Check if reboot is required
-#    - name: check if system reboot is required
-#      become: true
-#      stat:
-#        path: /var/run/reboot-required
-#      register: reboot_required
+    - name: check if system reboot is required
+      become: true
+      stat:
+        path: /var/run/reboot-required
+      register: reboot_required
+
+    - name: Send ntfy.sh update
+      uri:
+        url: "https://ntfy.lankhorst.org/homelab"
+        method: POST
+        body: "{{ inventory_hostname }} needs a reboot!"
+      when: reboot_required_.stat.exists
 
     # Send e-mail when reboot is required
 #    - name: Send e-mail when reboot is required
@@ -28,7 +35,7 @@
 #        port: 587
 #        username: pa.lankhorst@gmail.com
 #        password: "{{gmail_password}}"
-#        to: pa.lankhorst@proton.me
+#       to: pa.lankhorst@proton.me
 #        subject: Ansible-report
 #        body: System {{inventory_hostname}} needs a reboot!
 #        secure: starttls
