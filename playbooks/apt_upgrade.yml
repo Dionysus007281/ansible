@@ -9,7 +9,7 @@
 
     - name: Send ntfy.sh update
       uri:
-        url: "https://ntfy.lankhorst.org/Test"
+        url: "https://ntfy.lankhorst.org/homelab"
         method: POST
         body: "{{ inventory_hostname }} task completed"
 
