@@ -25,7 +25,7 @@
         url: "https://ntfy.lankhorst.org/homelab"
         method: POST
         body: "{{ inventory_hostname }} needs a reboot!"
-      when: reboot_required_.stat.exists
+      when: reboot_required.stat.exists
 
     # Send e-mail when reboot is required
 #    - name: Send e-mail when reboot is required
