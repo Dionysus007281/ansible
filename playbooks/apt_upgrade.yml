@@ -4,9 +4,9 @@
   tasks:
     - name: upgrade all apt packages
       apt:
-        upgrade: yes
         update_cache: yes
-
+        upgrade: yes
+        
     - name: Send ntfy.sh update
       uri:
         url: "https://ntfy.lankhorst.org/homelab"
